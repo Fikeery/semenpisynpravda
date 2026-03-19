@@ -1,73 +1,60 @@
 <?php
-// Устанавливаем кодировку, чтобы корректно отображать русский текст
+// Устанавливаем кодировку для корректного отображения кириллицы
 header('Content-Type: text/html; charset=utf-8');
 
-// Проверяем, был ли запрос отправлен методом POST
+// Проверяем, что запрос пришел методом POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Получаем данные из формы и очищаем их от лишних пробелов
-    $name = trim($_POST['name'] ?? '');
+    // Получаем данные из формы. 
+    // Оператор ?? '' защищает от ошибки, если поле вообще не было передано.
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
-    $confirm_password = $_POST['confirm_password'] ?? '';
-    $gender = $_POST['gender'] ?? '';
-    $agreement = isset($_POST['agreement']); // Чекбокс возвращает true, если отмечен
+    
+    // Получаем имя для приветствия (если нужно), но основную проверку делаем по email и паролю
+    $name = trim($_POST['name'] ?? 'Пользователь');
 
-    // Простая валидация данных
+    // Массив для сбора ошибок
     $errors = [];
 
-    if (empty($name)) {
-        $errors[] = "Имя не может быть пустым.";
+    // 1. Проверка поля Email
+    if (empty($email)) {
+        $errors[] = "Поле <strong>Email</strong> обязательно для заполнения.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // Дополнительная проверка на формат email
+        $errors[] = "Введите корректный адрес электронной почты.";
     }
 
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Введите корректный email адрес.";
-    }
-
+    // 2. Проверка поля Password
     if (empty($password)) {
-        $errors[] = "Пароль не может быть пустым.";
+        $errors[] = "Поле <strong>Пароль</strong> обязательно для заполнения.";
     }
 
-    if ($password !== $confirm_password) {
-        $errors[] = "Пароли не совпадают.";
-    }
-
-    if (empty($gender)) {
-        $errors[] = "Выберите пол.";
-    }
-
-    if (!$agreement) {
-        $errors[] = "Вы должны согласиться с условиями.";
-    }
-
-    // Если есть ошибки, выводим их
+    // Логика вывода результатов
     if (!empty($errors)) {
-        echo "<h1>Ошибка регистрации</h1>";
-        echo "<ul style='color: red;'>";
+        // Если есть ошибки, выводим их красным цветом
+        echo "<h1 style='color: #d9534f;'>Ошибка регистрации</h1>";
+        echo "<div style='border: 1px solid #d9534f; background: #fdf7f7; padding: 15px; border-radius: 5px;'>";
+        echo "<ul>";
         foreach ($errors as $error) {
-            echo "<li>" . htmlspecialchars($error) . "</li>";
+            echo "<li>" . $error . "</li>";
         }
         echo "</ul>";
-        echo "<a href='index.php'>Вернуться к форме</a>";
+        echo "</div>";
+        echo "<br><a href='index.php' style='text-decoration: none; color: #007bff;'>← Вернуться к форме</a>";
     } else {
-        // Если ошибок нет, имитируем успешную регистрацию
-        // В реальном проекте здесь был бы код для сохранения в базу данных
-        
-        echo "<h1>Регистрация успешна!</h1>";
+        // Если ошибок нет — успешная регистрация
+        echo "<h1 style='color: #28a745;'>Успешно!</h1>";
         echo "<p>Добро пожаловать, <strong>" . htmlspecialchars($name) . "</strong>!</p>";
-        echo "<p>Ваш email: " . htmlspecialchars($email) . "</p>";
-        echo "<p>Выбранный пол: " . htmlspecialchars($gender === 'male' ? 'Мужской' : 'Женский') . "</p>";
-        echo "<p style='color: green;'>Вы успешно приняли условия соглашения.</p>";
+        echo "<p>Ваш аккаунт с email <strong>" . htmlspecialchars($email) . "</strong> зарегистрирован.</p>";
+        echo "<p style='color: green;'>Все проверки пройдены.</p>";
         
-        // Здесь можно добавить редирект на страницу профиля или главную
-        // header("Location: welcome.php");
-        // exit;
+        // Здесь в будущем будет код сохранения в базу данных
     }
 
 } else {
-    // Если файл открыт напрямую, а не через отправку формы
+    // Если файл открыли напрямую без отправки формы
     echo "<h1>Доступ запрещен</h1>";
-    echo "<p>Эта страница предназначена только для обработки данных формы.</p>";
-    echo "<a href='index.php'>Вернуться к форме регистрации</a>";
+    echo "<p>Эта страница обрабатывает только данные формы.</p>";
+    echo "<a href='index.php'>Вернуться назад</a>";
 }
 ?>
