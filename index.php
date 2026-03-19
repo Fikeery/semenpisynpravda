@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <!-- Подключаем наш файл стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="registration-container">
         <h2>Регистрация</h2>
-        <form action="#" method="post">
+        
+        <!-- ВОТ ЗДЕСЬ ИЗМЕНЕНИЕ: добавлен method="POST" -->
+        <form action="action.php" method="POST">
             
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" placeholder="Введите имя" required>
