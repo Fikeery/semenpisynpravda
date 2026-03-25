@@ -57,4 +57,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p>Эта страница обрабатывает только данные формы.</p>";
     echo "<a href='index.php'>Вернуться назад</a>";
 }
+
 ?>
