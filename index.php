@@ -1,55 +1,46 @@
 <?php
-
-$file = fopen("test.txt","w") or die("не удалось создать файл"."</br>");
-$filename = "test.txt";
-$str = "Привет мир";
-fwrite($file, $str);
-fclose($file);
-$str = htmlentities(file_get_contents($filename));
-echo $str."</br>";
-
-rename ("test.txt", "mir.txt") or die;
-$dir = "folder";
-
+$dir = "test";
 if(!file_exists($dir)){
   if(mkdir($dir)){
   	 echo "Directory created successfully."."</br>";
-    rename ("mir.txt", "folder/mir.txt") or die;
   } else{
      echo "ERROR: Directory could not be created."."</br>";
   }
 } else{
 echo "ERROR: Directory already exists."."</br>";
 }
-$newfile="folder/mir.txt";
-if (copy("folder/mir.txt", "world.txt"))
-    echo "Копия файла создана"."</br>";
-else echo "Ошибка копирования файла"."</br>";
-$copyfile = "world.txt";
-echo "Байты:";
-echo filesize($copyfile)."</br>";
-echo "Мегабайты:";
-echo (filesize($copyfile)/1024)."</br>";
-echo "Гигабайты:";
-echo (filesize($copyfile)/1048576)."</br>";
-if (unlink("world.txt"))
-    echo "Файл удален"."</br>";
-else echo "Ошибка при удалении файла"."</br>";
-echo "mir.txt -";
-if(file_exists($newfile)==true){
-    echo"Файл существует"."</br>";
+$dir2 ="www" ;
+rename ($dir, $dir2);
+rmdir ($dir2);
+if(!file_exists($dir)){
+  if(mkdir($dir)){
+  	 echo "Directory created successfully."."</br>";
+  } else{
+     echo "ERROR: Directory could not be created."."</br>";
+  }
+} else{
+echo "ERROR: Directory already exists."."</br>";
 }
-else
-{
-echo "Такого файла не существует"."</br>";
+$folders = ['photos', 'gallery', 'images', 'backup', 'temp'];
+foreach ($folders as $folderName) {
+    $path = $dir . DIRECTORY_SEPARATOR . $folderName;
+    if (!is_dir($path)) {
+        if (mkdir($path, 0755)) {
+            echo "Создана папка: $path<br>";
+        } else {
+            echo "Ошибка создания: $path<br>";
+        }
+    } else {
+        echo "Папка уже существует: $path<br>";
+    }
 }
-echo "world.txt -";
-if(file_exists($copyfile)==true){
-    echo"Файл существует"."</br>";
-}
-else
-{
-echo "Такого файла не существует"."</br>";
-}
+$images = ['photos.jpg', 'gallery.jpg', 'images.jpg', 'backup.jpg', 'temp.jpg'];
+foreach($images as $massiv){
+    $file = fopen("test/images/".$massiv,"w") or die("не удалось создать файл"."</br>");
+    fclose($file);
+  }
+foreach(glob("test/images/*.jpg") as $file){
+  	    echo basename($file) ."<br>";
+  }
 ?>
 
