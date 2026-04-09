@@ -1,0 +1,15 @@
+Ошибка! Деление на ноль!2026-04-08 09:04:09 - ОШИБКА: Division by zero
+2026-04-08 09:11:05 - ОШИБКА: Division by zero
+2026-04-08 09:11:30 - ОШИБКА: Division by zero
+2026-04-08 09:11:31 - ОШИБКА: Division by zero
+2026-04-08 09:11:31 - ОШИБКА: Division by zero
+2026-04-08 09:11:32 - ОШИБКА: Division by zero
+2026-04-08 09:11:32 - ОШИБКА: Division by zero
+2026-04-08 09:12:04 - ОШИБКА: Division by zero
+2026-04-08 09:12:23 - ОШИБКА: Division by zero
+2026-04-09 07:52:26 - ОШИБКА: Division by zero
+2026-04-09 07:57:49 - ОШИБКА: Division by zero
+2026-04-09 07:57:50 - ОШИБКА: Division by zero
+2026-04-09 07:57:50 - ОШИБКА: Division by zero
+2026-04-09 07:57:50 - ОШИБКА: Division by zero
+2026-04-09 07:58:00 - ОШИБКА: Division by zero2026-04-09 07:58:00 - ОШИБКА: Division by zero2026-04-09 07:58:01 - ОШИБКА: Division by zero2026-04-09 08:07:37 - ОШИБКА: Division by zero2026-04-09 08:10:36 - ОШИБКА: Division by zero2026-04-09 08:10:37 - ОШИБКА: Division by zero2026-04-09 08:10:37 - ОШИБКА: Division by zero2026-04-09 08:11:36 - ОШИБКА: Division by zero2026-04-09 08:11:52 - ОШИБКА: Division by zero2026-04-09 08:12:08 - ОШИБКА: Division by zero2026-04-09 08:12:11 - ОШИБКА: Division by zero2026-04-09 08:13:43 - ОШИБКА: Division by zero2026-04-09 08:14:27 - ОШИБКА: Division by zero2026-04-09 08:15:31 - ОШИБКА: Division by zero2026-04-09 08:17:43 - ОШИБКА: Division by zero2026-04-09 08:28:21 - ОШИБКА: Division by zero2026-04-09 08:37:48 - ОШИБКА: Division by zero2026-04-09 08:47:44 - ОШИБКА: Division by zero2026-04-09 08:48:27 - ОШИБКА: Division by zero2026-04-09 08:49:32 - ОШИБКА: Division by zero2026-04-09 08:56:47 - ОШИБКА: Division by zero2026-04-09 08:57:15 - ОШИБКА: Division by zero2026-04-09 08:57:46 - ОШИБКА: Division by zero2026-04-09 08:57:59 - ОШИБКА: Division by zero2026-04-09 08:58:44 - ОШИБКА: Division by zero2026-04-09 08:59:00 - ОШИБКА: Division by zero2026-04-09 08:59:29 - ОШИБКА: Division by zero2026-04-09 09:09:30 - ОШИБКА: Division by zero2026-04-09 09:10:02 - ОШИБКА: Division by zero2026-04-09 09:10:16 - ОШИБКА: Division by zero2026-04-09 09:10:31 - ОШИБКА: Division by zero2026-04-09 09:10:55 - ОШИБКА: Division by zero2026-04-09 09:11:33 - ОШИБКА: Division by zero2026-04-09 09:13:10 - ОШИБКА: Division by zero2026-04-09 09:13:40 - ОШИБКА: Division by zero2026-04-09 09:13:58 - ОШИБКА: Division by zero2026-04-09 09:15:19 - ОШИБКА: Division by zero2026-04-09 09:15:43 - ОШИБКА: Division by zero2026-04-09 09:15:52 - ОШИБКА: Division by zero2026-04-09 09:16:05 - ОШИБКА: Division by zero2026-04-09 09:16:14 - ОШИБКА: Division by zero2026-04-09 09:17:02 - ОШИБКА: Division by zero2026-04-09 09:17:21 - ОШИБКА: Division by zero2026-04-09 09:17:30 - ОШИБКА: Division by zero2026-04-09 09:17:42 - ОШИБКА: Division by zero2026-04-09 09:18:20 - ОШИБКА: Division by zero2026-04-09 09:18:45 - ОШИБКА: Division by zero
